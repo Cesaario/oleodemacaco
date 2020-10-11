@@ -22,3 +22,12 @@ function gerarHora(){
         segundo
     }
 }
+
+function gerarTexto(){
+    const hora = gerarHora();
+    return [
+        "Está cedo demais",
+        "para o óleo",
+        "de macaco."
+    ]
+}
