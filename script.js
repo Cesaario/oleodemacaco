@@ -1,13 +1,28 @@
+audioCedoDemais();
 setInterval(relogio, 1000);
+
+function audioCedoDemais(){
+    const { hora } = gerarHora();
+    if(hora > 1 && hora < 23){
+        let audioCedo = new Audio("audios/cedo-demais.mp3");
+        audioCedo.play();
+    }
+}
 
 function relogio() {
     const horaAtual = gerarHora();
     const textoHorario = `${horaAtual.hora}:${horaAtual.minuto}:${horaAtual.segundo}`
     const dados = gerarDados();
+
     document.getElementById("hora").innerHTML = `${textoHorario}`
     document.getElementById("texto").innerHTML = `${dados.texto.join("<br>")}`
     document.getElementById("imagem").src = `${dados.imagem}`
     document.getElementById("texto").style.fontSize = `${!!dados.fonte ? dados.fonte : "48px"}`
+
+    if (horaAtual.hora == "00" && horaAtual.minuto == "00" && horaAtual.segundo == "00") {
+        let audioHora = new Audio("audios/hora-oficial.mp3");
+        audioHora.play();
+    }
 }
 
 function gerarHora() {
@@ -21,8 +36,8 @@ function gerarHora() {
     if (segundo < 10) segundo = `0${segundo}`
 
     if (true) {
-        hora = "23"
-        minuto = "05"
+        hora = "01";
+        minuto = hora;
     }
 
     return {
