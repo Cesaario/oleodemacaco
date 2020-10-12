@@ -1,10 +1,12 @@
-audioCedoDemais();
+audioInicial();
 setInterval(relogio, 1000);
 
-function audioCedoDemais(){
+function audioInicial(){
     const { hora } = gerarHora();
     if(hora > 1 && hora < 23){
         tocarAudio("audios/cedo-demais.mp3");
+    }else if(hora == 0){
+        tocarAudio("audios/hora-oficial.mp3");
     }
 }
 
