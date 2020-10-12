@@ -1,14 +1,26 @@
 <html>
+
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"
+            integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q=="
+            crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
+
     <body>
         <div class="container">
             <img id='imagem' src="imagens/macaco-padrao.jpg">
             <div id="hora"></div>
             <div id="texto"></div>
+            <div id="botao">
+                <img src="imagens/botao.png">
+                <span>CLIQUE PARA ATIVAR O SOM DO MACACO</span>
+            </div>
+            <div class="circle" style='animation-delay: 0s'></div>
+            <div class="circle" style='animation-delay: 1s'></div>
         </div>
     </body>
+
 </html>

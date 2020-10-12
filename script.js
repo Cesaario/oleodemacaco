@@ -4,8 +4,7 @@ setInterval(relogio, 1000);
 function audioCedoDemais(){
     const { hora } = gerarHora();
     if(hora > 1 && hora < 23){
-        let audioCedo = new Audio("audios/cedo-demais.mp3");
-        audioCedo.play();
+        tocarAudio("audios/cedo-demais.mp3");
     }
 }
 
@@ -20,8 +19,7 @@ function relogio() {
     document.getElementById("texto").style.fontSize = `${!!dados.fonte ? dados.fonte : "48px"}`
 
     if (horaAtual.hora == "00" && horaAtual.minuto == "00" && horaAtual.segundo == "00") {
-        let audioHora = new Audio("audios/hora-oficial.mp3");
-        audioHora.play();
+        tocarAudio('audios/hora-oficial.mp3');
     }
 }
 
@@ -35,8 +33,8 @@ function gerarHora() {
     if (minuto < 10) minuto = `0${minuto}`
     if (segundo < 10) segundo = `0${segundo}`
 
-    if (true) {
-        hora = "01";
+    if (false) {
+        hora = "00";
         minuto = hora;
     }
 
@@ -87,4 +85,13 @@ function gerarDados() {
             imagem: 'imagens/unnamed.jpg'
         }
     }
+}
+
+function tocarAudio(caminhoSom){
+    Howler.autoUnlock = true;
+    var som = new Howl({
+        src: [caminhoSom],
+        autoplay: true
+    })
+    som.play();
 }
