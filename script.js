@@ -17,6 +17,7 @@ function relogio() {
 
     document.getElementById("hora").innerHTML = `${textoHorario}`
     document.getElementById("texto").innerHTML = `${dados.texto.join("<br>")}`
+    document.getElementById("enigma").innerHTML = `${dados.dica || ""}`
     document.getElementById("imagem").src = `${dados.imagem}`
     document.getElementById("texto").style.fontSize = `${!!dados.fonte ? dados.fonte : "48px"}`
 
@@ -35,7 +36,7 @@ function gerarHora() {
     if (minuto < 10) minuto = `0${minuto}`
     if (segundo < 10) segundo = `0${segundo}`
 
-    if (false) {
+    if (false) { //DEBUG
         hora = "00";
         minuto = hora;
     }
@@ -59,7 +60,8 @@ function gerarDados() {
                 "MACACO"
             ],
             imagem: 'imagens/Macaco-da-noite.jpg',
-            fonte: '64px'
+            fonte: '64px',
+            dica: "MACAQUISSE"
         }
     } else if (parseInt(horaAtual.hora) == 1) {
         return {

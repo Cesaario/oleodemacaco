@@ -53,6 +53,15 @@ img {
   z-index: 10;
 }
 
+#enigma {
+  position: absolute;
+  bottom: 50;
+  right: 50;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 64px;
+}
+
 .circle {
   z-index: 5;
   top: 38;
